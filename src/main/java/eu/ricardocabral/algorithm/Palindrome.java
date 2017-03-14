@@ -15,11 +15,9 @@ public class Palindrome {
 	}
 
 	/**
-	 * First version using while Complexity An interviewer may ask about the
-	 * time complexity for this algorithm to try and trick the candidate. The
-	 * first function isPalindrome has a time complexity of O(n / 2)O(n/2) which
-	 * is equal to O(n)O(n) since Big-OO notation ignores constant terms.
-	 * isPhrasePalindrome is also O(n)O(n) since string transformations are
+	 * isPalindrome has a time complexity of O(n/2) which
+	 * is equal to O(n) since Big-O notation ignores constant terms.
+	 * isPhrasePalindrome is also O(n) since string transformations are
 	 * applied to each of the text’s characters.
 	 * 
 	 * @param text
