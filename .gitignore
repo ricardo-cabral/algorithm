@@ -1,5 +1,11 @@
+/target
 *.class
-
+.classpath
+.project
+.settings
+org.eclipse.core.resources.prefs
+org.eclipse.jdt.core.prefs
+org.eclipse.m2e.core.prefs
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
