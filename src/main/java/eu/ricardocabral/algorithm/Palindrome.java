@@ -18,6 +18,12 @@ public class Palindrome {
 		System.out.println(isPalindromeRecursive("Motor"));
 		System.out.println(isPalindromeRecursive("Test"));
 		System.out.println(isPalindromeRecursive("rotor"));
+		
+		System.out.println("Recursive Correct");
+		System.out.println(validateStringPalindrome("Madam"));
+		System.out.println(validateStringPalindrome("Motor"));
+		System.out.println(validateStringPalindrome("Test"));
+		System.out.println(validateStringPalindrome("rotor"));
 
 	}
 
@@ -64,7 +70,18 @@ public class Palindrome {
 		int right = charText.length - 1;
 
 		return validate(charText, left, right);
+		//return validateString(text);
 
+	}
+	
+	private static boolean validateStringPalindrome(String text){
+		if(text.length() == 0 || text.length() == 1)
+			return true;
+		
+		if(Character.toLowerCase(text.charAt(0)) == Character.toLowerCase(text.charAt(text.length()-1)))
+			return validateStringPalindrome(text.substring(1, text.length()-1));
+		
+		return false;
 	}
 
 	private static boolean validate(char[] text, int left, int right) {
