@@ -22,10 +22,37 @@ public class LongestPalindromic {
 		String s2 = "abababa";
 			
 		System.out.println(longestPalindrome(s));
-		//System.out.println(longestPalindrome(s1));
+		System.out.println(myLongestPalindrome(s));
+		System.out.println(myLongestPalindrome(s1));
 		//System.out.println(longestPalindrome(s2));
 	}
 	
+	
+	private static String myLongestPalindrome(String string){
+		if(string==null || string.length()<=1)
+	        return string;
+		
+		int stringSize = string.length();
+		int maxLenght = 1;
+		String longest = null;
+		
+		for (int i = 0; i < stringSize; i++) {
+			for (int j = 0; j < stringSize -1; j++) {
+				//int k = i+j;
+				
+				if(string.charAt(i) == string.charAt(j) && (j-i <= 2)){
+					if(j-i+1 > maxLenght){
+						maxLenght = j-i+1;
+						longest = string.substring(i, j+1);
+					}
+				}
+			}
+		}
+		
+		return longest;
+		
+		
+	}
 	private static String longestPalindrome(String string) {
 	    if(string==null || string.length()<=1)
 	        return string;
