@@ -38,19 +38,18 @@ public class InsertionSort {
 	}
 	
 	private static int[] insertionSortReverted(int[] array){
-		System.out.println("IsertionSort Reverted");
-		for(int i = 0; i <array.length; i++){
+		System.out.println("IsertionSort Reverted: " + Arrays.toString(array));
+		for(int i = 1; i <array.length; i++){
 			int key = array[i];
-			int j = i+ 1;
-			while(j < array.length){
-				if(key > array[j]){
-					int temp = array[i];
-					array[i] = array[j];
-					array[j] = temp;
-					j++;
+			int j = i -1;
+			
+			
+			while(j >=0 && key > array[j]){
+					array[j + 1] = array[j];
+					j--;
+					array[j + 1] = key;
+					
 					System.out.println(Arrays.toString(array));
-				}
-				
 			}
 		
 		}
