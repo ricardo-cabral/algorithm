@@ -5,6 +5,12 @@ import java.util.Arrays;
 /**
  * - efficient for sorting a small number of elements
  * - it is better then merge sort until ~43 elements
+ * - the best case occurs if the array is already sorted
+ * - the worst case occurs if the array is in reverse order
+ * - we have always to look at the worst case
+ * - it can be expressed as an^2 + bn + c. We have to exclude the constants and get the worst case n^2
+ * - We can confirm that insertion sort is a quadratic function
+ * - We may say theta of n-squared
  * @author Ricardo
  *
  */
