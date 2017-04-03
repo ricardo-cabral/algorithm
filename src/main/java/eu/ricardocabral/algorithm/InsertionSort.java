@@ -11,6 +11,10 @@ import java.util.Arrays;
  * - it can be expressed as an^2 + bn + c. We have to exclude the constants and get the worst case n^2
  * - We can confirm that insertion sort is a quadratic function
  * - We may say theta of n-squared
+ * 
+ * worst-case running time: o(n^2)
+ * bets-case running time: o(n^2)
+ * average-case running time: o(n^2)
  * @author Ricardo
  *
  */
