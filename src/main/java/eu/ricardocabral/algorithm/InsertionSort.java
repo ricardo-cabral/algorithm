@@ -27,6 +27,9 @@ public class InsertionSort {
 		System.out.println(Arrays.toString(insertionSort(array)));
 		int[] array2 = new int[]{5,2,4,6,1,3};
 		System.out.println(Arrays.toString(insertionSortReverted(array2)));
+		int[] array3 = new int[]{5,2,4,6,1,3};
+		System.out.println(Arrays.toString(myInsertionSort(array3)));
+		
 	}
 	
 	private static int[] insertionSort(int[] array ){
@@ -62,6 +65,24 @@ public class InsertionSort {
 					System.out.println(Arrays.toString(array));
 			}
 		
+		}
+		
+		return array;
+	}
+	
+	private static int[] myInsertionSort(int[] array){
+		System.out.println("My InsertionSort");
+		
+		for (int i = 1; i < array.length; i++) {
+			int aux =i;
+			for (int j = i; j >= 0; j--) {
+				if(array[j]> array[aux]){
+					int tmp =  array[j];
+					array[j] = array[aux];
+					array[aux] = tmp;
+					aux--;
+				}
+			}
 		}
 		
 		return array;
