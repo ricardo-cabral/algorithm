@@ -70,7 +70,7 @@ public class MergeSort {
 	private static void myMergeSort(int[] array, int begin, int end) {
 		int middle;
 		if (begin < end) {
-			middle = begin + (end - begin) / 2;
+			middle = (end + begin) / 2;
 			/*System.out.println(Arrays.toString(Arrays.copyOfRange(array, begin, end)) + "- begin= " + begin
 					+ ". middle= " + middle + ", end = " + end);*/
 			//Sort the left side of the array
