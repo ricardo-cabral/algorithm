@@ -27,7 +27,16 @@ public class MergeSort {
 		myMergeSort(myArray, 0, myArray.length -1);
 		System.out.println(Arrays.toString(myArray));
 		
+		int[] arrayToMerge = new int[]{8,4};
+		myMerge(arrayToMerge, 0, 0, 1);
+		
 
+		int[] arrayToMerge2 = new int[]{4,8,9};
+		myMerge(arrayToMerge2, 1, 1, 2);
+		
+		int[] arrayToMerge3 = new int[]{4,8,9,3};
+		myMerge(arrayToMerge3, 0, 2, 3);
+		
 	}
 
 	private static void mergeSort(int[] array, int begin, int end) {
