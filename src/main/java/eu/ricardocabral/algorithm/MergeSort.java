@@ -21,7 +21,7 @@ public class MergeSort {
 		mergeSort(array, 0, array.length - 1);
 		System.out.println("Sorted array: " + Arrays.toString(array));
 
-		int[] myArray = new int[] { 8, 4, 9, 3, 5, 2, 1, 6, 7 };
+		int[] myArray = new int[] { 45, 3, 50, 1, 20, 15, 33, 35};
 		tmpArray = new int[myArray.length];
 		System.out.println("My Merge sort: ");
 		myMergeSort(myArray, 0, myArray.length -1);
@@ -34,8 +34,15 @@ public class MergeSort {
 		int[] arrayToMerge2 = new int[]{4,8,9};
 		myMerge(arrayToMerge2, 1, 1, 2);
 		
-		int[] arrayToMerge3 = new int[]{4,8,9,3};
+		int[] arrayToMerge3 = new int[]{3,41,52,1};
 		myMerge(arrayToMerge3, 0, 2, 3);
+		
+		//int[] bookArray = new int[] { 45, 3, 50, 1, 20, 15, 33, 35};
+		int[] bookArray = new int[] { 3,41,52,1};
+		System.out.println("Book Merge sort: ");
+		//bookMergeSort(bookArray, 0, bookArray.length -1);
+		bookMerge(bookArray, 0, 2, 3);
+		System.out.println(Arrays.toString(bookArray));
 		
 	}
 
@@ -92,7 +99,7 @@ public class MergeSort {
 	}
 
 	private static void myMerge(int[] array, int begin, int middle, int end) {
-
+		helper = new int[end+1];
 		for (int i = begin; i <= end; i++) {
 			helper[i] = array[i];
 		}
@@ -120,6 +127,61 @@ public class MergeSort {
 		System.out.println("Merge: " + Arrays.toString(array));
 	}
 
+	private static void bookMergeSort(int[] array, int begin, int end){
+		int middle;
+		if (begin < end) {
+			middle = (end + begin) / 2;
+			/*System.out.println(Arrays.toString(Arrays.copyOfRange(array, begin, end)) + "- begin= " + begin
+					+ ". middle= " + middle + ", end = " + end);*/
+			//Sort the left side of the array
+			bookMergeSort(array, begin, middle);
+			//sort the right side of the array
+			bookMergeSort(array, middle + 1, end);
+			//combine both arrays
+			bookMerge(array, begin, middle, end);
+		}
+	}
+	private static void bookMerge(int[] array, int begin, int middle, int end){
+		
+		int lengthLeft = middle -begin +1 ;
+		int lengthRight = end - middle;
+		
+		int[] right = new int[array.length];
+		int[] left = new int[array.length];
+		
+		for(int i = 0; i< lengthLeft; i++){
+			left[i] = array[begin + i];
+		}
+		
+		for(int j = middle; j < end; j++){
+			right[j] = array[middle + 1];
+		}
+		
+		int pointLeft = 0, pointRigth = 0, pointArray = 0;
+		
+		while(pointLeft < lengthLeft && pointRigth < lengthRight){
+			if(left[pointLeft] < right[pointRigth]){
+				array[pointArray] = left[pointLeft];
+				pointLeft ++;
+			}else{
+				array[pointArray] = right[pointRigth];
+				pointRigth++;
+			}
+			pointArray++;
+		}
+		
+		while(pointLeft < lengthLeft){
+			array[pointArray] = left[pointLeft];
+			pointLeft++;
+			pointArray++;
+		}
+		
+		while(pointRigth < lengthRight){
+			array[pointArray] = right[pointRigth];
+			pointRigth++;
+			pointArray++;
+		}
+	}
 	
 
 }
