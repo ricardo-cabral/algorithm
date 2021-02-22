@@ -7,6 +7,9 @@ import java.util.Arrays;
  * an additional vector in the memory with the same size of array[] it is
  * inefficient for small set sizes
  * 
+ * In place merge sort the running time is much worse than the regular merge sort, 
+ * people don't really use it
+ * 
  * @author Ricardo
  *
  */
